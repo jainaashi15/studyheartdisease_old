@@ -35,8 +35,8 @@ loadPie = function(dataset)
      var svg = d3.select("body")
                  .select("#pieDiv")
                  .append("svg")
-                 .attr("width", 210)
-                 .attr("height", 210)
+                 .attr("width", 400)
+                 .attr("height", 250)
                  .attr("id","pieChart");
                 // .style("position","center");
          
@@ -52,7 +52,10 @@ loadPie = function(dataset)
                        return color(i);
                    })
                    .attr("d", arc);
+
  
+    
+
      arcs.append("text")
          .attr("transform", function(d) {
              return "translate(" + arc.centroid(d) + ")";
@@ -92,4 +95,43 @@ loadPie = function(dataset)
      .on("mouseout", function(){
          d3.select("#tooltip").classed("hidden", true)
      });
+     if(loadCondition == params[0])
+     {
+     svg.append("g")
+     .style("transform", `translate(${0}px,${200}px)`)
+     .append("text")
+     .attr("class", "title")
+     .attr("x", 20)
+     .attr("y", margin.top/4)
+     .attr("text-anchor", "left")
+     .text("Percentage Of Population Having Heart Disease By Gender")
+     .style("font-size", "12px")
+     .style("text-decoration", "underline");
+     }
+     else if(loadCondition == params[1])
+     {
+         svg.append("g")
+         .style("transform", `translate(${0}px,${200}px)`)
+         .append("text")
+         .attr("class", "title")
+         .attr("x", 20)
+         .attr("y", margin.top/4)
+         .attr("text-anchor", "left")
+         .text("Percentage Of Population Having Heart Disease By Age Group")
+         .style("font-size", "12px")
+         .style("text-decoration", "underline");
+     }
+     else if(loadCondition == params[2])
+     {
+         svg.append("g")
+         .style("transform", `translate(${0}px,${200}px)`)
+         .append("text")
+         .attr("class", "title")
+         .attr("x", 20)
+         .attr("y", margin.top/4)
+         .attr("text-anchor", "left")
+         .text("Percentage Of Population Having Heart Disease With Other Diseases")
+         .style("font-size", "12px")
+         .style("text-decoration", "underline");
+     }
 }

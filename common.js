@@ -1,6 +1,6 @@
 var getDataOnCondition = function(dataset, condition)
     {
-       console.log(dataset);
+      // console.log(dataset);
        arrHeartIndicatorData = getHeartDiseaseData(dataset);
       // console.log(arrHeartData);
        params = ["gender", "ageGroup", "AllDiseases"];
@@ -52,7 +52,7 @@ var getDataOnCondition = function(dataset, condition)
         var objFemale  = new  HeartDiseaseByMaleFemale(totalFemaleCount,"Female" , femalePercentage);
         objGender.push(objMale);
         objGender.push(objFemale);
-        console.log(totalMaleCount + " " + totalFemaleCount + " " + malePercentage + " " +femalePercentage);
+       // console.log(totalMaleCount + " " + totalFemaleCount + " " + malePercentage + " " +femalePercentage);
         return objGender;
     }
 

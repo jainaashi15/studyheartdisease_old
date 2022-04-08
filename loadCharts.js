@@ -1,3 +1,12 @@
+var margin = {top: 40, right: 40, bottom: 40, left: 40},
+    width = 900 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+
+	var w = 500;
+	var h = 300;
+	var padding = 40;
+
 var heart_disease_csv;
 var heart_disease_indicator_data;
 // params = ["gender", "ageGroup", "otherDisease", "AllDiseases"]
