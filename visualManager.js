@@ -8,4 +8,4 @@ d3.csv("heart_2020_cleaned.csv", function(data) {
     
 
 });
-console.log(heart_disease_csv);
+//console.log(heart_disease_csv);

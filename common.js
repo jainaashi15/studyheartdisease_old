@@ -21,9 +21,9 @@ var getDataOnCondition = function(dataset, condition)
         AllDiseasesInfo = getOtherDiseaseCount(arrHeartIndicatorData, condition, true);
         return AllDiseasesInfo;
        }
-       else if(condition == paramsOtherDisease[0] || condition == paramsOtherDisease[1] || condition == paramsOtherDisease[2]|| condition == paramsOtherDisease[3]|| condition == paramsOtherDisease[4])
+       else if(condition == paramsOtherDisease[0] || condition == paramsOtherDisease[1] || condition == paramsOtherDisease[2]|| condition == paramsOtherDisease[3]|| condition == paramsOtherDisease[4]|| condition == paramsOtherDisease[5])
        {
-        OtherDiseaseInfo = getOtherDiseaseCount(arrHeartIndicatorData,condition);
+        OtherDiseaseInfo = getOtherDiseaseCount(arrHeartIndicatorData,condition, false);
         return OtherDiseaseInfo;
        }
     }
@@ -159,34 +159,62 @@ getOtherDiseaseCount = function(arrData, diseaseName, isAllDiseases)
 {
     strokeCount = 0; difficultWalkCount = 0; diabeticCount=0;
     asthmaCount = 0; kidneyDiseaseCount = 0; skinCancerCount = 0;
+    noStrokeCount = 0; noDifficultWalkCount = 0; noDiabeticCount=0;
+    noAsthmaCount = 0; noKidneyDiseaseCount = 0; noSkinCancerCount = 0;
     var objDiseaseArr = [];
     var objDisease;
     totalCount = arrData.length;
+    console.log("totalCount : " + totalCount);
+    console.log(arrData);
     for(var i =0 ; i < arrData.length; i++)
     {        
         if(arrData[i].HasStroke == "Yes")
         {
             strokeCount = strokeCount + 1;
         }
+        if(arrData[i].HasStroke == "No")
+        {
+            noStrokeCount = noStrokeCount + 1;
+        }
         if(arrData[i].HasDifficultWalking == "Yes")
         {
             difficultWalkCount = difficultWalkCount + 1;
+        }
+        if(arrData[i].HasDifficultWalking == "No")
+        {
+            noDifficultWalkCount = noDifficultWalkCount + 1;
         }
         if(arrData[i].isDiabetic == "Yes")
         {
             diabeticCount = diabeticCount + 1;
         }
+        if(arrData[i].isDiabetic == "No")
+        {
+            noDiabeticCount = noDiabeticCount + 1;
+        }
         if(arrData[i].Asthma == "Yes")
         {
             asthmaCount = asthmaCount + 1;
+        }
+        if(arrData[i].Asthma == "No")
+        {
+            noAsthmaCount = noAsthmaCount + 1;
         }
         if(arrData[i].HasKidneyDisease == "Yes")
         {
             kidneyDiseaseCount = kidneyDiseaseCount + 1;
         }
+        if(arrData[i].HasKidneyDisease == "No")
+        {
+            noKidneyDiseaseCount = noKidneyDiseaseCount + 1;
+        }
         if(arrData[i].HasSkinCancer == "Yes")
         {
             skinCancerCount = skinCancerCount + 1;
+        }
+        if(arrData[i].HasSkinCancer == "No")
+        {
+            noSkinCancerCount = noSkinCancerCount + 1;
         }
     }
     //["Stroke", "DiffWalking","Diabetic","Asthma", "KidneyDisease", "SkinCancer"];
@@ -208,32 +236,46 @@ getOtherDiseaseCount = function(arrData, diseaseName, isAllDiseases)
         objDiseaseArr.push(objDisease6); 
     }
     else{
+        console.log("getOtherDiseaseCount  " + diseaseName);
         switch(diseaseName)
         {//constructor(diseaseCount, diseaseName, percentage) {
             //((ageGrp0Count/totalCount)* 100).toFixed(2)
             case "Stroke":
                 objDisease = new AllDiseases(strokeCount, diseaseName, ((strokeCount/totalCount)* 100).toFixed(2)); 
-                objDiseaseArr.push(objDisease);           
+                objDiseaseArr.push(objDisease);
+                objDisease1 = new AllDiseases(noStrokeCount, "No Stroke", ((noStrokeCount/totalCount)* 100).toFixed(2)); 
+                objDiseaseArr.push(objDisease1);
+                console.log(objDiseaseArr);
                 break;
             case "DiffWalking":
                 objDisease = new AllDiseases(difficultWalkCount, diseaseName, ((difficultWalkCount/totalCount)* 100).toFixed(2)); 
-                objDiseaseArr.push(objDisease);   
+                objDiseaseArr.push(objDisease);
+                objDisease1 = new AllDiseases(noDifficultWalkCount, "No Difficult Walk", ((noDifficultWalkCount/totalCount)* 100).toFixed(2)); 
+                objDiseaseArr.push(objDisease1); 
                 break;
             case "Diabetic":
                 objDisease = new AllDiseases(diabeticCount, diseaseName, ((diabeticCount/totalCount)* 100).toFixed(2)); 
-                objDiseaseArr.push(objDisease);   
+                objDiseaseArr.push(objDisease);
+                objDisease1 = new AllDiseases(noDiabeticCount, "No Diabetes", ((noDiabeticCount/totalCount)* 100).toFixed(2)); 
+                objDiseaseArr.push(objDisease1);   
                 break;
             case "Asthma":
                 objDisease = new AllDiseases(asthmaCount, diseaseName, ((asthmaCount/totalCount)* 100).toFixed(2)); 
-                objDiseaseArr.push(objDisease);   
+                objDiseaseArr.push(objDisease);
+                objDisease1 = new AllDiseases(noAsthmaCount, "No Asthma", ((noAsthmaCount/totalCount)* 100).toFixed(2)); 
+                objDiseaseArr.push(objDisease1);  
                 break;
             case "KidneyDisease":
                 objDisease = new AllDiseases(kidneyDiseaseCount, diseaseName, ((kidneyDiseaseCount/totalCount)* 100).toFixed(2)); 
-                objDiseaseArr.push(objDisease);   
+                objDiseaseArr.push(objDisease);
+                objDisease1 = new AllDiseases(noKidneyDiseaseCount, "No Kidney Disease", ((noKidneyDiseaseCount/totalCount)* 100).toFixed(2)); 
+                objDiseaseArr.push(objDisease1);   
                 break;
             case "SkinCancer":
                 objDisease = new AllDiseases(skinCancerCount, diseaseName, ((skinCancerCount/totalCount)* 100).toFixed(2)); 
-                objDiseaseArr.push(objDisease);   
+                objDiseaseArr.push(objDisease);
+                objDisease1 = new AllDiseases(noSkinCancerCount, "No Skin Cancer", ((noSkinCancerCount/totalCount)* 100).toFixed(2)); 
+                objDiseaseArr.push(objDisease1);    
                 break;
             default:
                 break;
@@ -262,55 +304,18 @@ getHeartDiseaseData = function(dataset)
     return arrData;
 }
 
-class HeartDiseaseIndicator{
-    constructor(HasHeartDisease, BMI, IsSmokes, DrinksAlcohol, HasStroke, PhysicalHealth, 
-        MentalHealth, HasDifficultWalking,Gender, AgeGrp, Race, 
-        isDiabetic, IsPhysicallyActive, GenHealth, SleepTime, Asthma, HasKidneyDisease, HasSkinCancer ){
-    this.HasHeartDisease = HasHeartDisease;
-    this.BMI = BMI;
-    this.IsSmokes = IsSmokes;
-    this.DrinksAlcohol = DrinksAlcohol;
-    this.HasStroke = HasStroke;
-    this.PhysicalHealth = PhysicalHealth;
-    this.MentalHealth = MentalHealth;
-    this.HasDifficultWalking = HasDifficultWalking;
-    this.Gender = Gender;
-    this.AgeGrp = AgeGrp;
-    this.Race = Race;
-    this.isDiabetic = isDiabetic;
-    this.IsPhysicallyActive = IsPhysicallyActive;
-    this.GenHealth = GenHealth;
-    this.SleepTime = SleepTime;
-    this.Asthma = Asthma;
-    this.HasKidneyDisease = HasKidneyDisease;
-    this.HasSkinCancer = HasSkinCancer; 
+getDataForParallelCoordinates = function(dataset){
+    arrHeartIndicatorData = getHeartDiseaseData(dataset);
+   // console.log(arrHeartIndicatorData);
+    arrParallelCo = [];
+    console.log("getDataForParallelCoordinates");
+    for(var i=0; i < arrHeartIndicatorData.length; i++)
+    {        
+        //constructor(AgeGrp, BMI, SleepTime,Race,Gender){ 
+        var obj = new ParallelCoordinatesIndicators(arrHeartIndicatorData[i].AgeGrp, arrHeartIndicatorData[i].BMI, arrHeartIndicatorData[i].SleepTime,arrHeartIndicatorData[i].Race,arrHeartIndicatorData[i].Gender );
+        arrParallelCo.push(obj);
+        //arrParallelCo[i];
     }
+   // console.log(arrParallelCo);
+    return arrParallelCo;
 }
-
-class HeartDiseaseByMaleFemale {
-        constructor(count, gender, percentage) {
-          this.genderCount = count;
-          this.gender = gender;
-          this.percentage =  percentage;                   
-        }
-      }
-class HeartDiseaseByAgeGroup {
-        constructor(ageGrpCount, ageGrp,  percentage) {
-          this.ageGrpCount = ageGrpCount;
-          this.ageGrp = ageGrp;      
-          this.percentage =  percentage;         
-        }
-      }
-class AllDiseases {
-        constructor(diseaseCount, diseaseName, percentage) {
-          this.diseaseCount = diseaseCount;
-          this.diseaseName = diseaseName;          
-          this.percentage =  percentage;         
-        }
-      }
-class HeartDiseaseByOtherDisease {
-        constructor(diseaseCount, percentage) {
-          this.diseaseCount = diseaseCount;          
-          this.percentage =  percentage;         
-        }
-      }

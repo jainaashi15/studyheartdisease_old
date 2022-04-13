@@ -1,11 +1,58 @@
 <!DOCTYPE html>
-<meta charset='utf-8'>
-<html>
-  <head>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <link rel='stylesheet' href='style.css'>
-  </head>
-  <body>
-    <script type='text/javascript' src='script.js'></script>
-  </body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Heart Disease</title>
+       <link rel="stylesheet"  href="http://localhost:8080/Styles.css">
+        <script type="text/javascript" src="http://localhost:8080/d3/d3.v3.js">        
+        </script>
+    </head>
+    <body>
+      <!-- <div id="full-page">-->
+           <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <!--  <table>
+               <tr>
+                   <td>-->
+                       
+                        <div id="pieDiv" class="container">           
+                            <label style="font-size: small;">Percentage Of Population Having Heart Disease By</label>
+                            <select id="selectAgeGender"></select>
+                        </div>	
+                  <!--   </td>
+                    <td>-->
+                       
+                        <div id="donutDiv"  class="container">           
+                            <label style="font-size: small;">Percentage Of Population Having </label>
+                            <select id="selectDisease"></select> 
+                            <label style="font-size: small;">vs Not Having it </label>
+                        </div>	
+                    <!--   </td>
+             </tr>
+             <tr>
+                    <td>-->
+                        <div id="parallelDiv">
+
+                        </div>
+                  <!--  </td>
+                    <td>
+                     
+                    </td>
+            </tr>
+           </table>	-->
+      <!-- 	</div> -->
+        <div id="tooltip" class="hidden">			
+        <p><span id="value">100</span></p>
+        </div>
+        <div id="tooltip1" class="hidden">			
+            <p><span id="value">100</span></p>
+        </div> 
+        <script src="http://localhost:8080/visualManager.js"></script>
+        <script src="http://localhost:8080/classes.js"></script>        
+        <script src="http://localhost:8080/common.js"></script>
+        <script src="http://localhost:8080/loadCharts.js"></script>
+        <script src="http://localhost:8080/pie.js"></script>
+        <script src="http://localhost:8080/donut.js"></script>
+       <!-- 	 <script src="http://localhost:8080/donuttest.js"></script>-->
+        <script src="http://localhost:8080/parallelCoordinates.js"></script>
+    </body>
 </html>

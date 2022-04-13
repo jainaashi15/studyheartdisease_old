@@ -1,9 +1,10 @@
-loadPie = function(dataset)
+loadDonut = function(dataset)
 {
+    console.log(dataset);
     var w = 150;
     var h = 150;	
     var outerRadius = w / 2;
-    var innerRadius = 0;
+    var innerRadius = 30;
     var arc = d3.svg.arc()
                  .innerRadius(innerRadius)
                  .outerRadius(outerRadius);
@@ -11,33 +12,19 @@ loadPie = function(dataset)
      var pie = d3.layout.pie()
                  .value(function(d){ return d.percentage});
  
-     //Gender // condition
-     //var color = d3.scale.ordinal()
-     //            .range(["#fec44f","#fc9272"]);
      var color;
-     if(loadCondition == params[0])
-     {
+    
          color = d3.scale.ordinal()
-         .range(["#fec44f","#fc9272"]);
-     }
-      if(loadCondition == params[1])
-     {
-         color = d3.scale.ordinal()
-         .range(["#9e0142","#d53e4f","#f46d43","#fdae61","#fee08b","#ffffbf","#e6f598","#abdda4","#66c2a5","#3288bd","#5e4fa2","#d8daeb","#f7f7f7"]);
-     } 
-     if(loadCondition == params[2])
-     {
-         color = d3.scale.ordinal()
-         .range(["#9e0142","#d53e4f","#f46d43","#fdae61","#66c2a5","#abdda4"]);
-     }            
+         .range(["#e7e1ef","#c994c7"]);
+             
  
      //Create SVG element
      var svg = d3.select("body")
-                 .select("#pieDiv")
+                 .select("#donutDiv")
                  .append("svg")
                  .attr("width", 250)
                  .attr("height", 250)
-                 .attr("id","pieChart");
+                 .attr("id","donutChart");
                 // .style("position","center");
          
      var arcs = svg.selectAll("g.arc")
@@ -74,21 +61,8 @@ loadPie = function(dataset)
          .text(function(){
              //condition
              var txt;
-             if(loadCondition == params[0])
-             {
-                 txt = "Count: "+ dataset[i].genderCount  + ", Gender :" + dataset[i].gender;
-             }
-              if(loadCondition == params[1])
-             {
-                 txt = "Count: "+ dataset[i].ageGrpCount  + ", age Group :" + dataset[i].ageGrp;
-                 //constructor(ageGrpCount, ageGrp,  percentage) {
-             }
-             if(loadCondition == params[2])
-             {
-                 //constructor(diseaseCount, diseaseName, percentage)
-                 txt = "Count: "+ dataset[i].diseaseCount  + ", Disease Name :" + dataset[i].diseaseName; 
-             }
            
+             txt = "Count: "+ dataset[i].diseaseCount  + ", Name :" + dataset[i].diseaseName;
              return txt;});
          d3.select("#tooltip").classed("hidden", false)
      })
