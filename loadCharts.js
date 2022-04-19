@@ -22,13 +22,13 @@ d3.csv("http://localhost:8080/heart_2020_cleaned.csv", function(data){
    //loadCondition = paramsOtherDiseasse[2]; 
    // add the options to the button
 
-   d3.select("#selectAgeGender")
-     .selectAll('myOptions')
-     .data(params)
-     .enter()
-     .append('option')
-     .text(function (d) { return d; }) 
-     .attr("value", function (d) { return d; }) 
+   //d3.select("#selectAgeGender")
+   //  .selectAll('myOptions')
+   //  .data(params)
+   //  .enter()
+   //  .append('option')
+   //  .text(function (d) { return d; }) 
+   //  .attr("value", function (d) { return d; }) 
 
    d3.select("#selectDisease")
      .selectAll('myOptionsDisease')
@@ -46,7 +46,7 @@ d3.csv("http://localhost:8080/heart_2020_cleaned.csv", function(data){
 
    loadCondition = paramsOtherDiseasse[0];
    datasetDonut = getDataOnCondition(data,loadCondition);
-   console.log(datasetDonut);
+   //console.log(datasetDonut);
    loadDonut(datasetDonut);
    //loadDonutTest(datasetDonut);
 
