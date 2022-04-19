@@ -22,8 +22,8 @@ loadDonut = function(dataset)
      var svg = d3.select("body")
                  .select("#donutDiv")
                  .append("svg")
-                 .attr("width", 250)
-                 .attr("height", 250)
+                 .attr("width", 200)
+                 .attr("height", 200)
                  .attr("id","donutChart");
                 // .style("position","center");
          
