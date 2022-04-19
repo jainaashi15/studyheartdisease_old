@@ -34,10 +34,10 @@ loadPie = function(dataset)
      //Create SVG element
      var svg = d3.select("body")
                  .select("#pieDiv")
-                 .append("svg")
+                 .select("#Genderpie_svg")
                  .attr("width", 250)
-                 .attr("height", 250)
-                 .attr("id","pieChart");
+                 .attr("height", 250);
+                // .attr("id","pieChart");
                 // .style("position","center");
          
      var arcs = svg.selectAll("g.arc")
@@ -95,5 +95,5 @@ loadPie = function(dataset)
      .on("mouseout", function(){
          d3.select("#tooltip").classed("hidden", true)
      });
-   
+  
 }
