@@ -60,3 +60,18 @@ class ParallelCoordinatesIndicators{
         this.SleepTime = SleepTime;
     }
 }
+
+class ParallelCoordinatesIndicatorsNumeric{
+  constructor(AgeGrp,AgeGrpNumeric, BMI, SleepTime,Race, RaceNumeric,Gender,GenderNumeric,Count){        
+             
+      this.Race = Race;
+    this.RaceNumeric = RaceNumeric;
+     this.Gender = Gender;
+     this.GenderNumeric = GenderNumeric;
+     this.AgeGrp = AgeGrp;
+      this.AgeGrpNumeric = AgeGrpNumeric;
+      this.BMI = BMI;
+      this.SleepTime = SleepTime;
+      this.Count=Count;
+  }
+}
