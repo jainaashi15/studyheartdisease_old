@@ -319,3 +319,120 @@ getDataForParallelCoordinates = function(dataset){
    // console.log(arrParallelCo);
     return arrParallelCo;
 }
+getDataForParallelCoordinatesNumeric = function(dataset){
+    arrHeartIndicatorData = getHeartDiseaseData(dataset);
+   // console.log(arrHeartIndicatorData);
+    arrParallelCo = [];
+    console.log("getDataForParallelCoordinates");
+   // ageDic = {1:"18-24",2:"25-29",3:"30-34",4:"35-39",5:"40-44",6:"45-49",7:"50-54",8:"55-59",9:"60-64",10:"65-69",11:"70-74",12:"75-79",13:"80-older"};
+   // raceArr = {1:"White",2:"Black",3:"Asian",4:"Hispanic",5:"American Indian/Alaskan Native",6:"Other"};
+   // genderArr = {0:"Male",1:"Female"};
+    AgeGrpNumeric = 0;
+    RaceNumeric = 0;
+    GenderNumeric = 0;
+    for(var i=0; i < arrHeartIndicatorData.length; i++)
+    {        
+        switch(arrHeartIndicatorData[i].AgeGrp)
+        {
+            case "18-24":
+                AgeGrpNumeric = "1";
+            break;
+            case "25-29":
+                AgeGrpNumeric ="2";
+            break;
+            case "30-34":
+                AgeGrpNumeric = "3";
+            break;
+            case "35-39":
+                AgeGrpNumeric = "4";
+            break;
+            case "40-44":
+                AgeGrpNumeric = "5";
+            break;
+            case "45-49":
+                AgeGrpNumeric = "6";
+            break;
+            case "50-54":
+                AgeGrpNumeric = "7";
+            break;
+            case "55-59":
+                AgeGrpNumeric = "8";
+            break;
+            case "60-64":
+                AgeGrpNumeric = "9";
+            break;
+            case "65-69":
+                AgeGrpNumeric = "10";
+            break;
+            case "70-74":
+                AgeGrpNumeric = "11";
+            break;
+            case "75-79":
+                AgeGrpNumeric = "12";
+            break;
+            case "80 or older":
+                AgeGrpNumeric = "13";
+            break;
+            default:
+                break;
+        }
+        switch(arrHeartIndicatorData[i].Race)
+        {
+            case "White":
+                RaceNumeric = 1;
+            break;
+            case "Black":
+                RaceNumeric = 2;
+            break;
+            case "Asian":
+                RaceNumeric = 3;
+            break;
+            case "Hispanic":
+                RaceNumeric = 4;
+            break;
+            case "American Indian/Alaskan Native":
+                RaceNumeric = 5;
+            break;
+            case "Other":
+                RaceNumeric = 6;
+            break;
+            default:
+                break;
+
+        }
+        switch(arrHeartIndicatorData[i].Gender)
+        {
+            case "Male":
+                GenderNumeric = 0;
+            break;
+            case "Female":
+                GenderNumeric = 1;
+            break;
+            default:
+                break;
+        }
+        //constructor(AgeGrp,AgeGrpNumeric, BMI, SleepTime,Race, RaceNumeric,Gender,GenderNumeric){
+        //constructor(AgeGrp, BMI, SleepTime,Race,Gender){ 
+        var obj = new ParallelCoordinatesIndicatorsNumeric(arrHeartIndicatorData[i].AgeGrp,AgeGrpNumeric,
+            arrHeartIndicatorData[i].BMI,
+             arrHeartIndicatorData[i].SleepTime,arrHeartIndicatorData[i].Race, RaceNumeric,arrHeartIndicatorData[i].Gender, GenderNumeric);
+        arrParallelCo.push(obj);
+        //arrParallelCo[i];
+    }
+
+  var arrParallelCoSubArr =  getRandomSubarray(arrParallelCo, 500)
+
+   // console.log(arrParallelCo);
+    return arrParallelCoSubArr;
+}
+
+function getRandomSubarray(arr, size) {
+    var shuffled = arr.slice(0), i = arr.length, temp, index;
+    while (i--) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
+    }
+    return shuffled.slice(0, size);
+}
