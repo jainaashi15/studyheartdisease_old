@@ -183,3 +183,30 @@ svg {
     stroke-width: 2px;
     fill: none;
   }
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12px;
+    
+}
+
+.ScrollStyle
+{
+    max-height: 280px;
+    max-width: 700px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+.container1 {
+  float: left;
+  width: 400px;
+  height:300px;
+}
+.container2 {
+  float: left;
+  width: 520px;
+  height:400px;
+}
