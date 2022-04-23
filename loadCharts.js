@@ -51,9 +51,11 @@ d3.csv("http://localhost:8080/heart_2020_cleaned.csv", function(data){
    //loadDonutTest(datasetDonut);
 
    //loadParallelCoordinates(dataset);
-   parallelCoordinatesDataSet = getDataForParallelCoordinates(data);
+  // parallelCoordinatesDataSet = getDataForParallelCoordinates(data);
   // console.log(parallelCoordinatesDataSet);
+  parallelCoordinatesDataSet = getDataForParallelCoordinatesNumeric(data); 
   loadParallelCoordinates(parallelCoordinatesDataSet);
+  
   
    //console.log(dataset);
   
