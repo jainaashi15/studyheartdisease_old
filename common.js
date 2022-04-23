@@ -436,3 +436,334 @@ function getRandomSubarray(arr, size) {
     }
     return shuffled.slice(0, size);
 }
+function getDataForGroupedBarChart(data)
+{
+    GroupInfo = [];
+    var objAgeGrpDis1 = new AgeGrpDiseaseCount("18-24",0,0,0,0,0);
+    var objAgeGrpDis2 = new AgeGrpDiseaseCount("25-29",0,0,0,0,0);
+    var objAgeGrpDis3 = new AgeGrpDiseaseCount("30-34",0,0,0,0,0);
+    var objAgeGrpDis4 = new AgeGrpDiseaseCount("35-39",0,0,0,0,0);
+    var objAgeGrpDis5 = new AgeGrpDiseaseCount("40-44",0,0,0,0,0);
+    var objAgeGrpDis6 = new AgeGrpDiseaseCount("45-49",0,0,0,0,0);
+    var objAgeGrpDis7 = new AgeGrpDiseaseCount("50-54",0,0,0,0,0);
+    var objAgeGrpDis8 = new AgeGrpDiseaseCount("55-59",0,0,0,0,0);
+    var objAgeGrpDis9 = new AgeGrpDiseaseCount("60-64",0,0,0,0,0);
+    var objAgeGrpDis10 = new AgeGrpDiseaseCount("65-69",0,0,0,0,0);
+    var objAgeGrpDis11 = new AgeGrpDiseaseCount("70-74",0,0,0,0,0);
+    var objAgeGrpDis12 = new AgeGrpDiseaseCount("75-79",0,0,0,0,0);
+    var objAgeGrpDis13 = new AgeGrpDiseaseCount(">= 80",0,0,0,0,0);
+    
+    for(i=0;i<data.length;i++)
+    {
+        //console.log("in GroupedBarChart"+data[i].AgeCategory);
+        switch(data[i].AgeCategory)
+        {
+            case "18-24":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis1.HeartDisCount = objAgeGrpDis1.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis1.DiabeticCount = objAgeGrpDis1.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis1.AsthmaCount = objAgeGrpDis1.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis1.KidneyDisCount = objAgeGrpDis1.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis1.SkinCancerCount = objAgeGrpDis1.SkinCancerCount + 1;
+                }
+                
+            break;
+            case "25-29":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis2.HeartDisCount = objAgeGrpDis2.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis2.DiabeticCount = objAgeGrpDis2.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis2.AsthmaCount = objAgeGrpDis2.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis2.KidneyDisCount = objAgeGrpDis2.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis2.SkinCancerCount = objAgeGrpDis2.SkinCancerCount + 1;
+                }
+            break;
+            case "30-34":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis3.HeartDisCount = objAgeGrpDis3.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis3.DiabeticCount = objAgeGrpDis3.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis3.AsthmaCount = objAgeGrpDis3.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis3.KidneyDisCount = objAgeGrpDis3.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis3.SkinCancerCount = objAgeGrpDis3.SkinCancerCount + 1;
+                }
+            break;
+            case "35-39":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis4.HeartDisCount = objAgeGrpDis4.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis4.DiabeticCount = objAgeGrpDis4.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis4.AsthmaCount = objAgeGrpDis4.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis4.KidneyDisCount = objAgeGrpDis4.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis4.SkinCancerCount = objAgeGrpDis4.SkinCancerCount + 1;
+                }
+            break;
+            case "40-44":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis5.HeartDisCount = objAgeGrpDis5.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis5.DiabeticCount = objAgeGrpDis5.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis5.AsthmaCount = objAgeGrpDis5.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis5.KidneyDisCount = objAgeGrpDis5.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis5.SkinCancerCount = objAgeGrpDis5.SkinCancerCount + 1;
+                }
+            break;
+            case "45-49":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis6.HeartDisCount = objAgeGrpDis6.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis6.DiabeticCount = objAgeGrpDis6.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis6.AsthmaCount = objAgeGrpDis6.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis6.KidneyDisCount = objAgeGrpDis6.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis6.SkinCancerCount = objAgeGrpDis6.SkinCancerCount + 1;
+                }
+            break;
+            case "50-54":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis7.HeartDisCount = objAgeGrpDis7.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis7.DiabeticCount = objAgeGrpDis7.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis7.AsthmaCount = objAgeGrpDis7.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis7.KidneyDisCount = objAgeGrpDis7.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis7.SkinCancerCount = objAgeGrpDis7.SkinCancerCount + 1;
+                }
+            break;
+            case "55-59":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis8.HeartDisCount = objAgeGrpDis8.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis8.DiabeticCount = objAgeGrpDis8.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis8.AsthmaCount = objAgeGrpDis8.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis8.KidneyDisCount = objAgeGrpDis8.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis8.SkinCancerCount = objAgeGrpDis8.SkinCancerCount + 1;
+                }
+            break;
+            case "60-64":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis9.HeartDisCount = objAgeGrpDis9.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis9.DiabeticCount = objAgeGrpDis9.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis9.AsthmaCount = objAgeGrpDis9.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis9.KidneyDisCount = objAgeGrpDis9.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis9.SkinCancerCount = objAgeGrpDis9.SkinCancerCount + 1;
+                }
+            break;
+            case "65-69":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis10.HeartDisCount = objAgeGrpDis10.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis10.DiabeticCount = objAgeGrpDis10.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis10.AsthmaCount = objAgeGrpDis10.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis10.KidneyDisCount = objAgeGrpDis10.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis10.SkinCancerCount = objAgeGrpDis10.SkinCancerCount + 1;
+                }
+            break;
+            case "70-74":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis11.HeartDisCount = objAgeGrpDis11.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis11.DiabeticCount = objAgeGrpDis11.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis11.AsthmaCount = objAgeGrpDis11.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis11.KidneyDisCount = objAgeGrpDis11.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis11.SkinCancerCount = objAgeGrpDis11.SkinCancerCount + 1;
+                }
+            break;
+            case "75-79":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis12.HeartDisCount = objAgeGrpDis12.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis12.DiabeticCount = objAgeGrpDis12.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis12.AsthmaCount = objAgeGrpDis12.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis12.KidneyDisCount = objAgeGrpDis12.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis12.SkinCancerCount = objAgeGrpDis12.SkinCancerCount + 1;
+                }
+            break;
+            case "80 or older":
+                if(data[i].HeartDisease == 'Yes')
+                {
+                    objAgeGrpDis13.HeartDisCount = objAgeGrpDis13.HeartDisCount + 1;
+                }
+                if(data[i].Diabetic == 'Yes')
+                {
+                    objAgeGrpDis13.DiabeticCount = objAgeGrpDis13.DiabeticCount + 1;
+                }
+                if(data[i].Asthma == 'Yes')
+                {
+                    objAgeGrpDis13.AsthmaCount = objAgeGrpDis13.AsthmaCount + 1;
+                }
+                if(data[i].KidneyDisease == 'Yes')
+                {
+                    objAgeGrpDis13.KidneyDisCount = objAgeGrpDis13.KidneyDisCount + 1;
+                }
+                if(data[i].SkinCancer == 'Yes')
+                {
+                    objAgeGrpDis13.SkinCancerCount = objAgeGrpDis13.SkinCancerCount + 1;
+                }
+            break;
+            default:
+                break;
+            
+        }
+
+    }
+    GroupInfo.push(objAgeGrpDis1);
+    GroupInfo.push(objAgeGrpDis2);
+    GroupInfo.push(objAgeGrpDis3);
+    GroupInfo.push(objAgeGrpDis4);
+    GroupInfo.push(objAgeGrpDis5);
+    GroupInfo.push(objAgeGrpDis6);
+    GroupInfo.push(objAgeGrpDis7);
+    GroupInfo.push(objAgeGrpDis8);
+    GroupInfo.push(objAgeGrpDis9);
+    GroupInfo.push(objAgeGrpDis10);
+    GroupInfo.push(objAgeGrpDis11);
+    GroupInfo.push(objAgeGrpDis12);
+    GroupInfo.push(objAgeGrpDis13);
+
+    return GroupInfo;
+}
