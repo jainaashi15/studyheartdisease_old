@@ -75,3 +75,14 @@ class ParallelCoordinatesIndicatorsNumeric{
       this.Count=Count;
   }
 }
+class AgeGrpDiseaseCount{
+constructor(AgeGrp, HeartDisCount, DiabeticCount, KidneyDisCount, AsthmaCount, SkinCancerCount )
+{
+  this.AgeGrp = AgeGrp;
+  this.HeartDisCount = HeartDisCount;
+  this.DiabeticCount = DiabeticCount;
+  this.KidneyDisCount = KidneyDisCount;
+  this.AsthmaCount = AsthmaCount;
+  this.SkinCancerCount = SkinCancerCount;
+}
+}
