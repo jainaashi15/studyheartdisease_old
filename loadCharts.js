@@ -42,7 +42,7 @@ d3.csv("http://localhost:8080/heart_2020_cleaned.csv", function(data){
 
    dataset = getDataOnCondition(data, loadCondition);
    heart_disease_indicator_data = dataset;
-   loadPie(dataset);
+   //loadPie(dataset);
 
    loadCondition = paramsOtherDiseasse[0];
    datasetDonut = getDataOnCondition(data,loadCondition);
@@ -69,7 +69,7 @@ function update(selectedGroup) {
     var dataFilter = getDataOnCondition(heart_disease_csv, loadCondition);
     d3.selectAll('#pieChart')
     .remove();
-    loadPie(dataFilter);   
+    //loadPie(dataFilter);   
   }
 
  // When the button is changed, run the updateChart function
