@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Heart Disease</title>
-       <link rel="stylesheet"  href="http://localhost:8080/Styles.css">
-        <script type="text/javascript" src="http://localhost:8080/d3/d3.v3.js">        
+       <link rel="stylesheet"  href="Styles.css">
+        <script type="text/javascript" src="d3/d3.v3.js">        
         </script>
     </head>
     <body>
@@ -20,47 +20,50 @@
 			<div id="body">
                 <div id="main" class ="main">
                     <div id="pieDiv" class="pieDiv">     
-                        <svg id="Genderpie_svg"></svg>     
-                        <svg id="legend_svg"></svg>
+                       <!-- <svg id="Genderpie_svg"></svg>     -->
+                        <!--<svg id="legend_svg"></svg>-->
                     </div>
                      
                     <div id="barchart" class="barchart">           
                            
                     </div> 
-
-                    <div id="BMIhistogram" class="BMIhistogram"> </div>
-                    <div id="barchartRD" class="barchartRD">           
-                           
+                    <div id="barchartRD" class="barchartRD">                         
                     </div>
+                    <div id="BMIhistogram" class="BMIhistogram"> </div>
+                    
+                    <div id="groupedbarchart2" class="groupedbarchart2"></div>
+                    
+                    
                 </div>
                 <div id="foot" class="foot">
-                    <div id="barchart_allDisease" class="barchart_allDisease">           
+                    <!--<div id="barchart_allDisease" class="barchart_allDisease">           
                         <p><label>Select disease:
                             <select id="Alldisease_selector"></select>
                           </label></p>
-                    </div>  
+                    </div>-->  
                     <div id="donutDiv"  class="donutDiv">           
                         <label style="font-size: small;">Percentage Of Population Having </label>
                         <select id="selectDisease"></select> 
-                        <label style="font-size: small;">vs Not Having it </label>
+                        <label style="font-size: small;">vs Not Having it </label><br/>
                     </div>
+                    <div id="groupedbarchart" class="groupedbarchart"></div>
                     
                 </div>
-		<div id="parallelCoordinates" class="parallelCoordinates"> 
+              
+               <div id="parallelCoordinates" class="parallelCoordinates"> 
                 <div class="container1" id="parallelDiv"></div>                       
                 <div class="ScrollStyle container2" id="grid"></div>
                </div>
-
-               <div id="groupedbarchart" class="groupedbarchart"></div>
-              <!--  <div id="groupedbarchart" class="groupedbarchart">           
-                           
-                </div>	
-		<div class="container1" id="parallelDiv">
-
-            	</div>-->
-           
-            <div class="ScrollStyle container2" id="grid"></div>
+               <div id="depth" class="depth">
+                    <div id="genhealthPie" class="depthpie"> </div>
+                    <div id="physicalActivity" class="depthpie"> </div>
+                    <div id="PHhistogram" class="PHhistogram"> </div>
+                    <div id="MHhistogram" class="MHhistogram"> </div>
+               </div>
+             
+                			
             </div>
+           
             
 	    </div>
        	
@@ -71,15 +74,16 @@
         <div id="tooltip1" class="hidden">			
             <p><span id="value"></span></p>
         </div> 
-        <script src="http://localhost:8080/visualManager.js"></script>
-        <script src="http://localhost:8080/classes.js"></script>        
-        <script src="http://localhost:8080/common.js"></script>
-        <script src="http://localhost:8080/loadCharts.js"></script>
-        <script src="http://localhost:8080/pie.js"></script>
-        <script src="http://localhost:8080/donut.js"></script>
+        <script src="visualManager.js"></script>
+        <script src="classes.js"></script>        
+        <script src="common.js"></script>
+        <script src="loadCharts.js"></script>
+        <script src="pie.js"></script>
+        <script src="donut.js"></script>
         
        <!-- 	 <script src="http://localhost:8080/donuttest.js"></script>-->
-         <script src="http://localhost:8080/parallelCoordinates.js"></script>
-        <script src="http://localhost:8080/groupedBarChart.js"></script>
+        <script src="parallelCoordinates.js"></script>
+        <script src="groupedBarChart.js"></script>
+        <!--<script type='text/javascript' src='script.js'></script>-->
     </body>
 </html>
